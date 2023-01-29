@@ -1,0 +1,14 @@
+body {
+  font-family: 'Roboto Mono', monospace !important;
+  background-color: #d5d4d4;
+}
+
+.img {
+  background-color: #d5d4d4;
+}
+
+@media screen and (max-width: 375px) {
+  .ph-size {
+   font-size: 12px;
+  }
+}
