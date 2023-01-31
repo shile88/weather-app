@@ -7,7 +7,7 @@ import LocationWeather from "./components/LocationWeather";
 import WeatherCard from "./components/WeatherCard";
 
 function App() {
-  const [location, setLocation] = useState([""]);
+  const [location, setLocation] = useState([]);
   const [disabled, setDisabled] = useState(false);
   const [error, setError] = useState("");
   const storage = JSON.parse(localStorage.getItem("location")) || [];
@@ -44,8 +44,7 @@ function App() {
       {!disabled && (
         <div className="row m-0">
           {!error &&
-            location.map((val, i) => {
-              if (val !== "" && !error) {
+            location.map((val, i) => {      
                 return (
                   <LocationWeather
                     key={i}
@@ -56,9 +55,7 @@ function App() {
                     error={error}
                     setError={setError}
                   />
-                );          
-              }
-              return null;
+                );              
             })}
           {error && (
             <div

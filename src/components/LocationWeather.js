@@ -11,7 +11,6 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 /*apikey=3480aca91389eff2e94f9f458bf45741*/
 
-console.log(API_KEY)
 const LocationWeather = ({
   location,
   loc,
@@ -29,7 +28,7 @@ const LocationWeather = ({
       if (loc !== "") {
         try {
           let res = await axios.get(
-            `${CONVERT_LOCATION_URL}?q=${loc}&limit=1&appid=${API_KEY}`
+            `${CONVERT_LOCATION_URL}?q=${loc}&limit=2&appid=${API_KEY}`
           );
           if (res.status === 200 && res.data.length > 0) {
             if (res.data[0].lat && res.data[0].lon) {
